@@ -1,3 +1,9 @@
+/*Proj3cts page*/
+
+.projects.main-content {
+	opacity: 1;
+}
+
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -18,7 +24,7 @@
 
 [class*='col-'] {
 	height: 50rem;
-	padding-right 20px;
+	padding-right: 20px;
 }
 
 [class*='col-']:last-of-type {
@@ -66,7 +72,6 @@
 }
 
 .top-navigation ul {
-	background-color: #;
 	border: 0.2em solid #;
 	margin-right: 0;
 
@@ -127,17 +132,19 @@ article {
 
 }
 
-/*About Me section
-*/
+/*About Me section*/
 
 
 /*Projects*/
 section.nytimes-hack {
 	opacity: 1;
 }
-.nytimes-img {
+.center-nyt{
+	width: 100%;
+
+}
+img.nytimes-img {
 	width: 40em;
-	margin-left: 9em;
 
 }
 @media only screen and (max-width: 320px) {
