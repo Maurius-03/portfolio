@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 .grid {
 	display: flex;
 	justify-content: space-around;
@@ -11,6 +12,8 @@
 	background-image: url('https://snap-photos.s3.amazonaws.com/img-thumbs/960w/J2XAUBP5Y1.jpg');
 	background-size: cover ;
 	background-repeat: no-repeat;
+/*    overflow-x: hidden;
+    overflow-y: auto;*/
 }
 
 [class*='col-'] {
@@ -23,21 +26,19 @@
 }
 
 .col-1-2 {
-	width: 70%;
+	width: 85%;
 	overflow: auto;
 }
 
 .col-1-4 {
-	width: 15%;
+	width: 8%;
+
 }
 
 .grid:after {
 	content: "";
 	display: table;
 	clear: both;
-}
-*{
-	border: 1px dotted red;
 }
 
 /*Navigation*/
@@ -47,11 +48,27 @@
 	width: 100%;
 	z-index: 9999;
 }
+
+.logo{
+	width: 3.5rem;
+/*	Vertical align trick
+*/	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
 .top-navigation > .content {
 	height: 70px;
 	padding: 0px 15px;  	
-	width: 90%; 	
+	width: 85%; 	
   	margin: 0 auto;
+  	background-color: #FDFDFF;
+}
+
+.top-navigation ul {
+	background-color: #;
+	border: 0.2em solid #;
+	margin-right: 0;
 
 }
  
@@ -65,7 +82,21 @@
 	-webkit-font-smoothing: antialiased;
 }
 
+.top-navigation .links:first-of-type {
+	padding-left: 0;
+}
+.top-navigation .links:last-of-type {
+	margin-right: 1em;
+}
+
 .top-navigation .links > .active{
+	color: #4c5058;
+	font-weight: 500;
+}
+
+.top-navigation .links > a.active,
+.top-navigation .links > a.active:hover
+{
 	color: #4c5058;
 	font-weight: 500;
 }
@@ -84,12 +115,102 @@
 section.main-content {
 	height: 100%;
 	margin: 0 auto;
+	margin-top: 5em;
+	background-color: #F6F2E7;
+	opacity: 0.5;
+}
+
+article {
+	text-align: center;
+}
+.masthead {
+
+}
+
+/*About Me section
+*/
+
+
+/*Projects*/
+section.nytimes-hack {
+	opacity: 1;
+}
+.nytimes-img {
+	width: 40em;
+	margin-left: 9em;
+
+}
+@media only screen and (max-width: 320px) {
+  .masthead-heading{
+    font-size: 3em;
+  }
+  .masthead {
+    padding: 3em 0;
+  }
+  .masthead-intro{
+    margin-top: -1em;
+  }
+}
+
+.introduction-section, .location-section,.questions-section{
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+
+.social-footer{
+	height: 2.5em;
+	text-align: center;
+	background-color: #0D2636;
+/*	background-color: #FDFDFF;
+*/
+
+}
+
+.social-footer .content {
+	width: 84.2%;
+	background-color: #FDFDFF;
+	margin: 0 auto;
+	height: 2.5em;
+	padding-top: 0.5rem;
+}
+
+.social-footer ul{
+	padding-left: 0;
+	display: inline;
+	background-color: #FDFDFF;
+	padding: 0.4em;
+}
+
+.social > li {
+	list-style-type: none;
+	font-family: 'Roboto', sans-serif;
+	width: 3.3em;
+	display: inline;
+	margin-right: 1.25rem;
+}
+
+a {
+	text-decoration: none;
+	color: #4c5058;
+}
+
+.fa {
+	margin-right: 0.2em;
+	margin-left: 0.2em	;
 }
 
 @media only screen and (max-width: 786px) {
 	div.grid{
-		position: absolute;
+		position: relative;
 		width: 100%;
+		overflow: hidden;
+	}
+.top-navigation .links:last-of-type{
+		margin-right: 0px;
 	}
 	div.col-1-2 {
 		width: 100%;
@@ -102,5 +223,14 @@ section.main-content {
 		position: relative;
 		width: 100%;
 	}
+  }
+}
+
+@media screen and (min-width: 40em) {
+  @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+    /* ... parallax styles ... */
+    .parallax {
+  	scroll-behavior: smooth;
+}
   }
 }
